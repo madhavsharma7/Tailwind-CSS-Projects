@@ -36,6 +36,8 @@ export default function Hero() {
         <button className="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold p-3.5 w-48 rounded-full transition-all cursor-pointer shadow-lg">
           Get Started
         </button>
+
+        
       </div>
     </section>
   );
