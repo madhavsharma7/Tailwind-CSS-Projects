@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 
 export default function Header() {
+  // =========================================================================
+  // DARK / LIGHT MODE LOGIC
+  // =========================================================================
+
+  // [1] State: LocalStorage se saved theme check karta hai (default: Dark Mode)
   const [isDark, setIsDark] = useState(() => {
     return localStorage.getItem("theme") !== "light";
   });
 
+  // [2] DOM Update: State change par <html> tag me 'light' class add/remove aur save karta hai
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.remove("light");
@@ -15,6 +21,7 @@ export default function Header() {
     }
   }, [isDark]);
 
+  // [3] Click Handler: State ko toggle karta hai (Dark <-> Light)
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
   };
@@ -40,15 +47,28 @@ export default function Header() {
         <h1 className="text-[3vw] mt-[-1vw] font-bold text-white">Fylo</h1>
 
         <div className="ml-auto flex items-center gap-15 list-none text-m">
-          <li className="cursor-pointer hover:text-[#65e2d9] transition-colors">Features</li>
-          <li className="cursor-pointer hover:text-[#65e2d9] transition-colors">Testimonials</li>
-          <li className="cursor-pointer hover:text-[#65e2d9] transition-colors">Footer</li>
+          <li className="cursor-pointer hover:text-[#65e2d9] transition-colors">
+            Features
+          </li>
+          <li className="cursor-pointer hover:text-[#65e2d9] transition-colors">
+            Testimonials
+          </li>
+          <li className="cursor-pointer hover:text-[#65e2d9] transition-colors">
+            Footer
+          </li>
+          {/* =========================================================================
+              DARK / LIGHT MODE TOGGLE BUTTON
+              - Click karne par toggleTheme() function chalega
+              - isDark = true  => Moon Icon (🌙)
+              - isDark = false => Sun Icon (☀️)
+             ========================================================================= */}
           <li
             onClick={toggleTheme}
             className="cursor-pointer p-1 rounded-full hover:scale-110 active:scale-95 transition-transform"
             title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
           >
             {isDark ? (
+              /* Moon Icon: Dark Mode me show hoga */
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
