@@ -1,1 +1,76 @@
 @import "tailwindcss";
+
+/* Smooth theme transition */
+html,
+body,
+section,
+header,
+div {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light Theme Styling */
+html.light,
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Sections Backgrounds */
+html.light .bg-\[\#1c2430\],
+html.light .bg-\[\#1c2431\] {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-\[\#181e2a\] {
+  background-color: #ffffff !important;
+}
+
+/* Curve SVG in Hero */
+html.light svg path[fill="#181e2a"] {
+  fill: #ffffff !important;
+}
+
+/* Header & Typography */
+html.light header,
+html.light header svg,
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-gray-200,
+html.light .text-gray-300,
+html.light .text-gray-400 {
+  color: #64748b !important;
+}
+
+/* Testimonial Cards */
+html.light .bg-\[\#202b3d\] {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Newsletter / Form Card */
+html.light .bg-\[\#171e29\] {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .bg-\[\#171e29\] input {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Preserve Dark Theme on Footer */
+html.light .bg-\[\#0b1524\] {
+  background-color: #0b1524 !important;
+}
+
+html.light .bg-\[\#0b1524\] .text-white,
+html.light .bg-\[\#0b1524\] a,
+html.light .bg-\[\#0b1524\] h1 {
+  color: #ffffff !important;
+}
