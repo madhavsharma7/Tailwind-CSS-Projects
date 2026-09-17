@@ -33,11 +33,9 @@ export default function Hero() {
           family, and co-workers.
         </p>
 
-        <button className="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold p-3.5 w-48 rounded-full transition-all cursor-pointer shadow-lg">
+        <button className="bg-[#65e2d9] hover:bg-[#65e2d9] text-slate-900 font-semibold p-3.5 w-48 rounded-full transition-all cursor-pointer shadow-lg">
           Get Started
         </button>
-
-        
       </div>
     </section>
   );
